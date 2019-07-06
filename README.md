@@ -2,7 +2,7 @@
 
 ## Important!
 ```
-Create a new user and database baed on:
+Create a new user and database based on:
 user_name = 'yash'
 user_pwd = '1234'
 database_name = 'tag_cloud'
