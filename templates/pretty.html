@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Pretty</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <script>
+        .container-fluid{
+            margin-right: auto;
+            margin-left: auto;
+            max-width: 60%;
+        }
+    </script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Word Count</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Frequency Table</a></li>
+                    <li class="active"><a href="/pretty">Pretty</a></li>
+                    <!-- <li><a href="#">Page 3</a></li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid" style="width: 40%">
+        <center>
+            <h1>Pretty Presentation</h1>
+        </center>
+        <hr>
+        
+        <center>
+            {% for row in rows %}
+                <font style="font-size: {{row.count}}px; color: {{ ['#5d8aa8','#e32636','#e52b50','#9966cc','#a4c639','#cd9575','#915c83',
+            '#a1caf1','#98777b','#fe6f5e','#318ce7','#8a2be2','#cc5500','#e03c31'] | random }}">{{row.search_word}}</font>
+                {% if (range(1, 51) | random)%15 == 0 %}
+                    <br/>
+                {% endif %}
+            {% endfor %}
+
+        </center>
+    </div>
+</body>
+
+</html>
